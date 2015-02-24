@@ -1,5 +1,6 @@
 package camt.se331.shoppingcart.service;
 
+import camt.se331.shoppingcart.dao.NewProductDao;
 import camt.se331.shoppingcart.dao.ProductDao;
 import camt.se331.shoppingcart.dao.SimpleProductDao;
 import camt.se331.shoppingcart.entity.Product;
@@ -16,7 +17,7 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
 
 
-    ProductDao productDao;
+    ProductDao productDao = new SimpleProductDao();
     @Override
     public List<Product> getProducts() {
         return productDao.getProducts();
