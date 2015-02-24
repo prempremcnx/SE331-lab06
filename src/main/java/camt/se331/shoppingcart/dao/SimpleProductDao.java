@@ -4,13 +4,15 @@ import camt.se331.shoppingcart.entity.Product;
 import camt.se331.shoppingcart.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 /**
  * Created by Dto on 2/8/2015.
  */
-
+@Repository
+@Profile("db.simpleDao")
 public class SimpleProductDao implements  ProductDao{
 
     private Set<Product> products;
