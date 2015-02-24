@@ -2,6 +2,7 @@ package camt.se331.shoppingcart.dao;
 
 import camt.se331.shoppingcart.entity.Product;
 import camt.se331.shoppingcart.entity.VatEntity;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.List;
  * Created by PREMPREM on 24/2/2558.
  */
 @Repository
+@Profile("db.myDao")
 public class NewProductDao implements ProductDao {
     List<Product> products;
     public NewProductDao() {
