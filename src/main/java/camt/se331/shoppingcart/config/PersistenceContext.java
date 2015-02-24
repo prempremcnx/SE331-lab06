@@ -38,6 +38,7 @@ import java.util.Properties;
 @EnableJpaRepositories("camt.se331.shoppingcart.repository")
 @PropertySources(value={@PropertySource("classpath:/applicationEmbedDb.properties")})
 
+@Configuration
 class PersistenceContext {
     private static final String[] ENTITY_PACKAGES = {
             "camt.se331.shoppingcart.entity"
