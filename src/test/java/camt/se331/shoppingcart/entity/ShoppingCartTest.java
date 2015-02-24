@@ -48,5 +48,31 @@ public class ShoppingCartTest {
         );
     }
 
+    @Test
+    public void testGetTotalProductPriceUsingMock() {
+        Product p = mock(Product.class);
+        when(p.getTotalPrice()).thenReturn(1000.0);
+
+        SelectedProduct sp = new SelectedProduct(p,0);
+        assertThat(sp.getTotalPrice(),is(0.0));
+        when(p.getTotalPrice()).thenReturn(2500.00);
+        sp.setProduct(p);
+        sp.setAmount(10);
+        when(p.getTotalPrice()).thenReturn(25000.00);
+    }
+
+    @Test
+    public void test() {
+        SelectedProduct sp1 = mock(SelectedProduct.class);
+        SelectedProduct sp2 = mock(SelectedProduct.class);
+
+        when(sp1.getTotalPrice()).thenReturn(200.0);
+        when(sp2.getTotalPrice()).thenReturn(300.0);
+
+        ShoppingCart shoppingCart=new ShoppingCart((Arrays.asList(sp1,sp2)));
+        assertThat(shoppingCart.getTotalProductPrice(),is(500.00));
+
+    }
+
 
 }
