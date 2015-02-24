@@ -15,7 +15,8 @@ productService.service('totalCalService',function() {
 
         for (var index = 0; index < products.length;index++) {
             var product = products[index];
-            output += parseFloat(product.netPrice);
+            var vat = product.totalPrice - product.netPrice;
+            output += parseFloat(vat);
         }
         return output;
     }
