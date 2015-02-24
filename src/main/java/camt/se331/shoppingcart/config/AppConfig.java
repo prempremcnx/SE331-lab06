@@ -13,6 +13,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Configuration 
 @ComponentScan(basePackages = {"camt.se331.shoppingcart"})
 @EnableAspectJAutoProxy
+@Import({PersistenceContext.class})
 
 public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
