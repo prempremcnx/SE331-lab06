@@ -14,6 +14,7 @@ import java.util.Arrays;
  */
 
 @Profile("db.init")
+@Component
 public class DatabaseInitializationBean implements InitializingBean {
     @Autowired
     ProductRepository productRepository;
