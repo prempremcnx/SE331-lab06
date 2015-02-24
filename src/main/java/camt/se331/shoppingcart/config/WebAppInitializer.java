@@ -22,7 +22,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
 	public void onStartup(ServletContext servletContext) throws ServletException {
 
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
-        ctx.getEnvironment().setActiveProfiles("db.simpleDao");
+        ctx.getEnvironment().setActiveProfiles("db.myDao");
         ctx.register(AppConfig.class);
         ctx.setServletContext(servletContext);    
         Dynamic dynamic = servletContext.addServlet("dispatcher", new DispatcherServlet(ctx));  
