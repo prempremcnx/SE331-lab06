@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class WebAppInitializer implements WebApplicationInitializer {
 
-    String basicConfig = "classpath:/embedSetup.properties";
+    String basicConfig = "classpath:/remoteSetup.properties";
 	public void onStartup(ServletContext servletContext) throws ServletException {
 
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
